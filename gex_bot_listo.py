@@ -11,7 +11,7 @@ import time
 from datetime import datetime
 import pytz
 import anthropic
-
+import os
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "PEGA_TU_TOKEN_AQUI")
 CHAT_ID        = os.environ.get("CHAT_ID", "1743882233")
 ANTHROPIC_KEY  = os.environ.get("ANTHROPIC_API_KEY", "PEGA_TU_API_KEY_AQUI")
