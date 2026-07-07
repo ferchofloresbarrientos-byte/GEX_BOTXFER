@@ -15,7 +15,7 @@ import os
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "PEGA_TU_TOKEN_AQUI")
 CHAT_ID        = os.environ.get("CHAT_ID", "1743882233")
 ANTHROPIC_KEY  = os.environ.get("ANTHROPIC_API_KEY", "PEGA_TU_API_KEY_AQUI")
-HORA_ENVIO     = "01:35"
+HORA_ENVIO     = "01:39"
 
 ET = pytz.timezone("America/New_York")
 
@@ -155,7 +155,7 @@ if __name__ == "__main__":
         elif sys.argv[1] in ("--manual", "--now"):
             morning_job()
     else:
-       print(f"Bot iniciado - enviara briefing a las {HORA_ENVIO} ET")
+        print(f"Bot iniciado - enviara briefing a las {HORA_ENVIO} ET")
         test_connection()
         last_run_date = None
         while True:
