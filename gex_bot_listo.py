@@ -155,9 +155,12 @@ if __name__ == "__main__":
         elif sys.argv[1] in ("--manual", "--now"):
             morning_job()
     else:
-        print(f"Bot iniciado - enviara briefing a las {HORA_ENVIO} ET")
+       print(f"Bot iniciado - enviara briefing a las {HORA_ENVIO} ET")
         test_connection()
-        schedule.every().day.at(HORA_ENVIO).do(morning_job)
+        last_run_date = None
         while True:
-            schedule.run_pending()
-            time.sleep(30)
+            now_et = datetime.now(ET)
+            if now_et.strftime("%H:%M") == HORA_ENVIO and last_run_date != now_et.date():
+                morning_job()
+                last_run_date = now_et.date()
+            time.sleep(20)
